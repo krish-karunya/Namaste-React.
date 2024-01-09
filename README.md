@@ -19,3 +19,10 @@ Namaste Reat🚀
 - HTTPS
 - Tree Shaking -remove unused code
 - Different dev and prod bundles
+
+Episode -3
+
+-To make our developer life easier we can create a script inside the package.json .wt need to be execute 
+that we have mention inside the script ,npm will takecare
+
+eg: npm run start
