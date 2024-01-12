@@ -1,32 +1,3 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import "./index.css"; //External css
-// internal css
-const styleCard = {
-  backgroundColor: "#f0f0f0",
-};
-const Header = () => {
-  return (
-    <div className="header">
-      <div className="logoContainer">
-        <img
-          src="https://img.freepik.com/premium-vector/online-food-app-icon-food-shop-location-logo-also-online-resturent-location-template_608547-155.jpg?w=2000"
-          alt="logo"
-          className="logo"
-        />
-      </div>
-      <div className="Nav-items">
-        <ul>
-          <li>Home</li>
-          <li>About us</li>
-          <li>Constact us</li>
-          <li>Cart</li>
-        </ul>
-      </div>
-    </div>
-  );
-};
-
 const resList = [
   {
     info: {
@@ -1765,51 +1736,4 @@ const resList = [
   },
 ];
 
-const Body = () => {
-  return (
-    <div className="Body">
-      <div className="search">search</div>
-      <div className="res-container">
-        {resList.map((res) => (
-          <ResturantCard key={res.info.id} resData={res} />
-        ))}
-      </div>
-    </div>
-  );
-};
-
-const ResturantCard = ({ resData }) => {
-  const { name, cloudinaryImageId, cuisines, avgRating, costForTwo } =
-    resData.info;
-  return (
-    <div className="res-card" style={styleCard}>
-      <div className="res-image">
-        <img
-          src={
-            "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_200,h_150/" +
-            cloudinaryImageId
-          }
-          alt="food-image"
-        />
-
-        <h4>{name}</h4>
-        <h4>{cuisines.join(",")}</h4>
-        <h4>{avgRating} Star rating </h4>
-        <h4>{costForTwo}</h4>
-      </div>
-    </div>
-  );
-};
-
-const AppLayout = () => {
-  return (
-    <div className="app">
-      <Header />
-      <Body />
-      {/* <Footer /> */}
-    </div>
-  );
-};
-
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<AppLayout />);
+export default resList;

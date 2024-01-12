@@ -96,3 +96,27 @@ The developer can hint at which child elements may be stable across different re
 when we use index as a key , adding a new element in last position , it will work perfectly fine , what suppose if you add a new element in 1 position now the whole key or index value will change it will re-render all the component again
 
 refer this link : https://dev.to/shiv1998/why-not-to-use-index-as-key-in-react-lists-practical-example-3e66
+
+# Episode - 5
+
+- we have learned file structure , as per the industry standard we have to kept all the file in ot the "src"folder and also inside the sr folder we have to create folder named as component and save all component in to that component folder
+
+- Two of Export/Import
+
+* Default Export / import - one file have only one default export
+* Named export / import - one file can multiple named export,while importing we should use {}curely bracket
+
+# React Hooks :
+
+(Normal js utility Function)
+
+- Use state() - Super powerful state variable in react
+- Use Effect()
+
+# useState();
+
+whenever the state variable change react will re-render the component , what does react do behind the scence , basically whenever we executing the code react will create a virtual DOM , virtual DOM representation of Actual DOM , if do some change re-consiliation or react fiber and diff algorithim react update the UI very fast
+
+React fiber :
+
+- new of finding the div and updating the dom
