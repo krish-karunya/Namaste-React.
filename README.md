@@ -1,4 +1,4 @@
-Namaste Reat🚀
+Namaste React🚀
 
 # parcel
 
@@ -119,4 +119,41 @@ whenever the state variable change react will re-render the component , what doe
 
 React fiber :
 
-- new of finding the div and updating the dom
+- new way of finding the div and updating the dom
+
+# Episode 6
+
+# Monolith Architecture vs MicroService Architecture :
+
+Monolith Architecture :
+
+- Monolith is a single project that every have to work, suppose Your are doing some change in code Eg: wants to change the color of the button here we need to build the project again compile and deploy whole project ,
+
+- if backend using java mean everyone have to code useing java only
+
+MicroService Architecture :
+
+- Work independently in different language ,All the service talk to each other depend upon the use Cases At the end of the day all project or portal map to same domain name
+
+There are two types of Fetching the data from API :
+
+1st Approach :
+
+Page Load => API Call => Render
+
+2nd Approach :(Best Approach)
+
+Page Load => Render(skeleten) => API call => Re-render
+
+# UseEffect(CallBack Function , Dependency Array ):
+
+Anything you want to execute after rendering then mention it inside the use effect hook
+
+# Optional chaining :
+
+- While accessing the nested object from API .there is a chances to breaking the App,To aviod this we have to optional chaining , and return the value as undefined
+
+# Shimmer UI :
+
+- Shimmer UI is a better way to show loading states in your web or mobile app. It improves the user experience by providing visual feedback.
+
