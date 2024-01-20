@@ -24,6 +24,7 @@ li:hover{
 .Nav-items > ul >li{
    padding: 10px;
    margin: 20px;
+   cursor: pointer;
     
 }
 .res-card{
@@ -73,6 +74,8 @@ font-weight: bold;
 .login{
     margin: 10px;
     padding:0 20px;
+    border-radius: 30px;
+    font-weight: bold;
     cursor: pointer;
 }
 
@@ -86,4 +89,7 @@ font-weight: bold;
 .search-box{
     height: 30px;
     /* border-radius: 10px; */
+}
+.filter{
+    display: flex;
 }

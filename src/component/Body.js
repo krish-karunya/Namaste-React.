@@ -19,19 +19,17 @@ const Body = () => {
 
   const fetchData = async () => {
     const data = await fetch(
-      "https://www.swiggy.com/mapi/homepage/getCards?lat=13.1058042&lng=80.2156402"
+      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=13.1058042&lng=80.2156402&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
     );
     // console.log(data);
     const json = await data.json();
     // console.log(json);
 
     setListOfResturant(
-      json?.data?.success.cards[4]?.gridWidget?.gridElements?.infoWithStyle
-        ?.restaurants
+      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
     setFilterRes(
-      json?.data?.success.cards[4]?.gridWidget?.gridElements?.infoWithStyle
-        ?.restaurants
+      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   };
 
@@ -47,36 +45,44 @@ const Body = () => {
     <Shimmer />
   ) : (
     <div className="Body">
-      <div className="search">
-        <input
-          type="text"
-          className="search-box"
-          value={searchText}
-          onChange={(e) => {
-            setSearchText(e.target.value);
-          }}
-        />
-        <button
-          className="search-btn"
-          onClick={() => {
-            const filterRestaurant = listOfResturant.filter((res) => {
-              console.log(searchText);
-              console.log(res.info.name);
+      <div className="filter">
+        <div className="search">
+          <input
+            type="text"
+            className="search-box"
+            value={searchText}
+            onChange={(e) => {
+              setSearchText(e.target.value);
+            }}
+          />
+          <button
+            className="search-btn"
+            onClick={() => {
+              const filterRestaurant = listOfResturant.filter((res) => {
+                console.log(res.info.name);
+                console.log(searchText);
+                return res.info.name
+                  .toLowerCase()
+                  .includes(searchText.toLowerCase());
 
-              res.info.name.toLowerCase().includes(searchText.toLowerCase());
-            });
-            setFilterRes(filterRestaurant);
-          }}
-        >
-          Search
-        </button>
+                // console.log(
+                //   res.info.name.toLowerCase().includes(searchText.toLowerCase())
+                // );
+              });
+              console.log(filterRestaurant);
+              setFilterRes(filterRestaurant);
+            }}
+          >
+            Search
+          </button>
+        </div>
         <button
           className="filter-btn"
           onClick={() => {
-            filterList = resList.filter((res) => {
-              return res.info.avgRating > 4.4;
+            filterList = listOfResturant.filter((res) => {
+              return res.info.avgRating > 4.2;
             });
-            setListOfResturant(filterList);
+            setFilterRes(filterList);
             console.log(filterList);
           }}
         >
