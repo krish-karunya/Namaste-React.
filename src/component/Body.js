@@ -2,8 +2,9 @@ import ResturantCard from "./ResturantCard";
 // import resList from "../utils/mockData";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
 const Body = () => {
-  console.log("rendered");
+  // console.log("rendered");
   //Local State Variable -  Super powerful variable
   // console.log(resList[0].info.name);
   // console.log(useState()); this will give output as a array [undefine, function]
@@ -91,7 +92,9 @@ const Body = () => {
       </div>
       <div className="res-container">
         {filterRes.map((res) => (
-          <ResturantCard key={res.info.id} resData={res} />
+          <Link to={"/restaurant/" + res.info.id}>
+            <ResturantCard key={res.info.id} resData={res} />
+          </Link>
         ))}
       </div>
     </div>
