@@ -3,6 +3,7 @@ import ResturantCard from "./ResturantCard";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 const Body = () => {
   // console.log("rendered");
   //Local State Variable -  Super powerful variable
@@ -41,7 +42,12 @@ const Body = () => {
   // }
 
   // Ternary Operator :
-
+  const onlineStatus = useOnlineStatus();
+  if (onlineStatus === false) {
+    return (
+      <h1>Look like You offline!!! Please check your interenet connection</h1>
+    );
+  }
   return listOfResturant.length === 0 ? (
     <Shimmer />
   ) : (
@@ -92,8 +98,8 @@ const Body = () => {
       </div>
       <div className="res-container">
         {filterRes.map((res) => (
-          <Link to={"/restaurant/" + res.info.id}>
-            <ResturantCard key={res.info.id} resData={res} />
+          <Link key={res.info.id} to={"/restaurant/" + res.info.id}>
+            <ResturantCard resData={res} />
           </Link>
         ))}
       </div>
