@@ -16,9 +16,9 @@ class UserCard extends React.Component {
   componentDidUpdate(preprops, prevstate) {
     if (this.state.count !== prevstate.count) {
       // this code will execute
-      console.log(prevstate.count);
-      console.log("DID UPDATE CALLED");
-      console.log(preprops);
+      // console.log(prevstate.count);
+      // console.log("DID UPDATE CALLED");
+      // console.log(preprops);
     }
     // if (this.state.count1 !== prevstate.count1) {
     //   // this code will execute
