@@ -6,7 +6,7 @@ import { useState } from "react";
 
 const RestaurantMenu = () => {
   const { resId } = useParams();
-  const [showItems, setShowItems] = useState(false);
+  // const [showItems, setShowItems] = useState(false);
   const [showIndex, setShowIndex] = useState(null);
 
   // console.log(resId);
@@ -17,10 +17,11 @@ const RestaurantMenu = () => {
   if (resInfo === null) {
     return <Shimmer />;
   }
-  const { name, cuisines, costForTwo } = resInfo.cards[0].card.card.info;
+  const { name, cuisines, costForTwo } = resInfo.cards[2].card.card.info;
 
   const { itemCards } =
-    resInfo.cards[2].groupedCard.cardGroupMap.REGULAR.cards[2].card.card;
+    resInfo.cards[4].groupedCard.cardGroupMap.REGULAR.cards[2].card.card;
+
   // console.log(itemCards);
   // console.log(
   //   resInfo.cards[2].groupedCard.cardGroupMap.REGULAR.cards[2].card.card
@@ -28,22 +29,18 @@ const RestaurantMenu = () => {
   // console.log(resInfo.cards[2].groupedCard.cardGroupMap.REGULAR.cards);
 
   const categories =
-    resInfo.cards[2].groupedCard.cardGroupMap.REGULAR.cards.filter((c) => {
+    resInfo.cards[4].groupedCard.cardGroupMap.REGULAR.cards.filter((c) => {
       return (
         c.card.card["@type"] ===
         "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
       );
     });
-  // console.log(categories);
-
-  window.addEventListener("online",function(){
-    
-  })
+  console.log(categories);
 
   return (
-    <div className="text-center">
-      <h1 className="font-bold my-5 text-2xl">{name}</h1>
-      <h2 className="font-bold text-lg">
+    <div className='text-center  text-slate-800'>
+      <h1 className='font-bold my-5 text-2xl'>{name}</h1>
+      <h2 className='font-bold text-lg'>
         {cuisines.join(",")} -{costForTwo / 100}
       </h2>
       {categories.map((category, index) => {
@@ -61,4 +58,4 @@ const RestaurantMenu = () => {
   );
 };
 
-export default RestaurantMenu; 
+export default RestaurantMenu;

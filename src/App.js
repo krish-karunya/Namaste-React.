@@ -29,7 +29,7 @@ const AppLayout = () => {
   }, []);
   // console.log(userName);
   return (
-    <div className="app">
+    <div className='app'>
       <Provider store={appStore}>
         <UserContext.Provider value={{ loggedInUser: userName, setUserName }}>
           {/*we are passing setUserName function */}{" "}

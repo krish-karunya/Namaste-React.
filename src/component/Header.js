@@ -19,42 +19,39 @@ const Header = () => {
   });
 
   return (
-    <div className="flex justify-between bg-pink-200 shadow-lg sm:bg-yellow-200 ">
-      <div className="logoContainer">
-        <img src={LOGO_URL} alt="logo" className="w-44" />
+    <div className='flex justify-between items-center shadow-md h-24 text-gray-500 font-sans font-semibold  w-full '>
+      <div>
+        <img src={LOGO_URL} alt='logo' className='h-auto bg-transparent ml-5' />
       </div>
-      <div className="flex items-center">
-        <ul className="flex p-10 m-4  ">
-          <li className="p-4 font-bold hover:bg-slate-300">
-            <Link to="/">Home</Link>
+      <div className='ml-10'>
+        <ul className='flex gap-5 mr-5 md:ml-10 items-center'>
+          <li>
+            <Link to='/'>Home</Link>
           </li>
-          <li className="p-4 font-bold  hover:bg-slate-300 ">
-            <Link to="/about">About us</Link>
+          <li>
+            <Link to='/about'>About us</Link>
           </li>
-          <li className="p-4 font-bold  hover:bg-slate-300">
-            <Link to="/contact">Contact us</Link>
+          <li>
+            <Link to='/contact'>Contact us</Link>
           </li>
-          <li className="p-4 font-bold hover:bg-slate-300 ">
-            <Link to="/grocery">Grocery</Link>
+          <li>
+            <Link to='/grocery'>Grocery</Link>
           </li>
-          <li className="p-4 font-bold  hover:bg-slate-300 text-xl ">
-            <Link to="/cart"> Cart- {cartItem.length} Items</Link>
+          <li>
+            <Link to='/cart'> Cart- {cartItem.length} Items</Link>
           </li>
-          <li className="p-4 font-bold  hover:bg-slate-300 ">
-            Online Status: {onlineStatus ? "🟢" : "🔴"}{" "}
-          </li>
+          <li>Online Status: {onlineStatus ? "🟢" : "🔴"} </li>
           <button
-            className="p-4 font-bold  hover:bg-slate-300 "
+            className='bg-slate-300 p-2 m-2 rounded-lg hover:bg-slate-200'
             onClick={() => {
-              btnName === "Log In"      
+              btnName === "Log In"
                 ? setBtnName("Log Out")
                 : setBtnName("Log In");
               // console.log(btnName);
-            }}
-          >
+            }}>
             {btnName}
           </button>
-          <li>{loggedInUser}</li>
+          {/* <li>{loggedInUser}</li> */}
         </ul>
       </div>
     </div>

@@ -33,7 +33,7 @@ const Body = () => {
     );
     // console.log(data);
     const json = await data.json();
-    // console.log(json);
+    console.log(json);
 
     setListOfResturant(
       json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
@@ -41,10 +41,11 @@ const Body = () => {
     setFilterRes(
       json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
+    console.log(
+      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    );
   };
-  // console.log(
-  //   json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-  // );
+
   // Conditional  Rendering :
   // Rendering on the basis of condition is known as conditional rendering
   // if (listOfResturant.length === 0) {
@@ -65,19 +66,19 @@ const Body = () => {
   return listOfResturant.length === 0 ? (
     <Shimmer />
   ) : (
-    <div className="bg-green-400">
-      <div className="flex">
-        <div className="m-4 p-4 ">
+    <div>
+      <div className='flex'>
+        <div className='m-4 p-4 '>
           <input
-            type="text"
-            className="border border-solid border-black rounded-lg"
+            type='text'
+            className='border border-solid border-slate-500 rounded-lg'
             value={searchText}
             onChange={(e) => {
               setSearchText(e.target.value);
             }}
           />
           <button
-            className="px-4 py-1 bg-gray-300 m-4 rounded-lg font-bold"
+            className='px-4 py-1 bg-gray-300 m-4  text-slate-700 rounded-lg font-medium hover:bg-slate-200'
             onClick={() => {
               const filterRestaurant = listOfResturant.filter((res) => {
                 // console.log(res.info.name);
@@ -92,38 +93,36 @@ const Body = () => {
               });
               // console.log(filterRestaurant);
               setFilterRes(filterRestaurant);
-            }}
-          >
+            }}>
             Search
           </button>
         </div>
-        <div className="flex items-center">
+        <div className='flex items-center'>
           <button
-            className="px-4 py-1 bg-gray-300  rounded-lg font-bold"
+            className='px-4 py-1 bg-gray-300  text-slate-700 rounded-lg font-medium hover:bg-slate-200'
             onClick={() => {
               filterList = listOfResturant.filter((res) => {
                 return res.info.avgRating > 4.2;
               });
               setFilterRes(filterList);
               // console.log(filterList);
-            }}
-          >
+            }}>
             Top Rated Restaurant
           </button>
         </div>
 
-        <div className="flex items-center">
+        {/* <div className='flex items-center'>
           <input
-            type="text"
-            className="border border-solid border-black rounded-lg m-10"
+            type='text'
+            className='border border-solid border-black rounded-lg m-10'
             value={loggedInUser}
             onChange={(e) => {
               setUserName(e.target.value);
             }}
           />
-        </div>
+        </div> */}
       </div>
-      <div className="flex flex-wrap">
+      <div className='flex flex-wrap items-center justify-center '>
         {filterRes.map((res) => (
           <Link to={"/restaurant/" + res.info.id} key={res.info.id}>
             {res?.info?.avgRating > 4 ? (

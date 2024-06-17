@@ -95,7 +95,7 @@ The developer can hint at which child elements may be stable across different re
 
 when we use index as a key , adding a new element in last position , it will work perfectly fine , what suppose if you add a new element in 1 position now the whole key or index value will change it will re-render all the component again
 
-refer this link : https://dev.to/shiv1998/why-not-to-use-index-as-key-in-react-lists-practical-example-3e66
+refer this link : https://dev.to/shiv 
 
 # Episode - 5
 

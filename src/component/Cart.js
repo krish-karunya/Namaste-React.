@@ -13,13 +13,12 @@ const Cart = () => {
     dispatch(clearCart());
   };
   return (
-    <div className="m-10 p-10 font-bold text-center">
-      <h1 className="text-xl">Cart</h1>
-      <div className="w-6/12 m-auto ">
+    <div className='m-10 p-10 font-bold text-center text-gray-500'>
+      <h1 className='text-xl'>Cart</h1>
+      <div className='w-6/12 m-auto '>
         <button
-          className="p-2 m-2 bg-blue-900 text-white rounded-lg"
-          onClick={handleClearCart}
-        >
+          className='p-2 m-2 bg-blue-500 hover:bg-blue-600 text-white rounded-lg'
+          onClick={handleClearCart}>
           Clear Cart
         </button>
         {cartItem.length === 0 && <h1>Cart is Empty.Add items to the cart</h1>}
