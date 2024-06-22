@@ -97,7 +97,7 @@ const Body = () => {
             Search
           </button>
         </div>
-        <div className='flex items-center'>
+        <div className='flex items-center pr-10'>
           <button
             className='px-4 py-1 bg-gray-300  text-slate-700 rounded-lg font-medium hover:bg-slate-200'
             onClick={() => {

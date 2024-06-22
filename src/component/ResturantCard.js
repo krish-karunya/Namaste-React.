@@ -11,7 +11,7 @@ const ResturantCard = ({ resData }) => {
   const { loggedInUser } = useContext(UserContext);
   return (
     <div
-      className='m-4 p-4 min-w-[300px] rounded-md truncate hover:text-clip	mb-10  group-hover:transition duration-100 hover:shadow-xl  hover:shadow-orange-500 '
+      className='m-4 p-4 w-[300px] rounded-md truncate hover:text-clip	mb-10  group-hover:transition duration-100 hover:shadow-xl  hover:shadow-orange-500 '
       // style={styleCard}
     >
       <div className='res-image'>
@@ -19,12 +19,12 @@ const ResturantCard = ({ resData }) => {
           <img
             src={CDN_URL + cloudinaryImageId}
             alt='food-image'
-            className='rounded-lg min-w-full hover: '
+            className='rounded-lg '
           />
         </div>
         <div>
           <h4 className='font-bold py-2'>{name}</h4>
-          <h4 className='truncate text-slate-400 font-medium'>
+          <h4 className='truncate text-slate-400 font-medium '>
             {cuisines.join(",")}
           </h4>
           <h4>⭐{avgRating} Star rating </h4>
